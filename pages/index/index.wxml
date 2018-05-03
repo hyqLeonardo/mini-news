@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="type-wrapper" backgrond-color="#0E000A">
+  <view class="type-item" wx:for="{{typeList}}" wx:for-item="typeItem" bindtap='onTapType'>
+    <view class="type-text">{{typeItem}}</view>
+    <image wx:if="{{currentType==typeItem}}" class="type-mark" src="/images/type-selected.svg"></image>
+  </view>
+  <image class="type-bg" src="/images/type-bg.png" mode="scaleToFill"></image>
+</view>
