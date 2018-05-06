@@ -1,2 +1,14 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="title">{{detail.title}}</view>
+<view class="text-info">
+  <view class="source-time">
+    <view class="source">{{detail.source}}</view>
+    <view class="time">{{detail.time}}</view>
+  </view>
+  <view class="read-count">阅读 {{detail.readCount}}</view>
+</view>
+<view class="content-item" wx:for="{{detail.content}}" wx:for-item="contentItem">
+  <view wx:if="{{contentItem.type=='p'}}" class="paragraph">{{contentItem.text}}</view>
+  <view wx:if="{{contentItem.type=='strong'}}" class="strong">{{contentItem.text}}</view>
+  <image wx:if="{{contentItem.type=='image'}}" class="image" src="{{contentItem.src}}" mode="widthFix"></image>
+</view>

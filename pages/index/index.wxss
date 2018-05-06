@@ -1,10 +1,11 @@
 /**index.wxss**/
 .type-wrapper {
-  position: relative;
-  display: flex;
+  position: fixed;
   font-size: 30rpx;
   line-height: 42rpx;
   justify-content: center;
+  z-index: 2;
+  width: 100%;
 }
 
 .type-bg {
@@ -16,9 +17,14 @@
   z-index: -1;
 }
 
+.type-item-wrapper {
+  display: flex;
+  margin-left: 25rpx;
+}
+
 .type-item {
   display: flex;
-  width: 110rpx;
+  width: 100rpx;
   flex-shrink: 0;
   flex-direction: column;
   align-items: center;
@@ -34,4 +40,48 @@
   height: 20rpx;
   opacity: 0.8;
   filter: invert(100%);
+}
+
+.news-list {
+  margin-top: 42rpx;
+}
+
+.news-item {
+  display: flex;
+  height: 200rpx;
+  width: 90%;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.news-tiem:last-child {
+  border-bottom: none;
+}
+
+.news-text-info {
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  width: 70%;
+}
+
+.news-title {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.source-time {
+  margin-top: 20rpx; 
+  display: flex;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  opacity: 0.5;
+}
+
+.news-source {
+  margin-right: 20rpx;
+}
+
+.news-image {
+  height: 140rpx;
+  width: 220rpx;
 }
