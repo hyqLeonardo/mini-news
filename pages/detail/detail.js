@@ -12,7 +12,12 @@ Page({
     })
     this.getDetail()
   },
-  getDetail() {
+  onPullDownRefresh() {
+    this.getDetail(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
+  getDetail(callback) {
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
       data: {
@@ -27,6 +32,9 @@ Page({
         this.setData({
           detail: detail
         })
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   }
